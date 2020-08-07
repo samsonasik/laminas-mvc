@@ -7,12 +7,13 @@ your own custom plugins with the manager.
 
 The built-in plugins are:
 
-- [Laminas\\Mvc\\Controller\\Plugin\\AcceptableViewModelSelector](#acceptableviewmodelselector-plugin)
-- [Laminas\\Mvc\\Controller\\Plugin\\Forward](#forward-plugin)
-- [Laminas\\Mvc\\Controller\\Plugin\\Layout](#layout-plugin)
-- [Laminas\\Mvc\\Controller\\Plugin\\Params](#params-plugin)
-- [Laminas\\Mvc\\Controller\\Plugin\\Redirect](#redirect-plugin)
-- [Laminas\\Mvc\\Controller\\Plugin\\Url](#url-plugin)
+- [Controller Plugins](#controller-plugins)
+  - [AcceptableViewModelSelector Plugin](#acceptableviewmodelselector-plugin)
+  - [Forward Plugin](#forward-plugin)
+  - [Layout Plugin](#layout-plugin)
+  - [Params Plugin](#params-plugin)
+  - [Redirect Plugin](#redirect-plugin)
+  - [Url Plugin](#url-plugin)
 
 If your controller implements the `setPluginManager()`, `getPluginManager()` and
 `plugin()` methods, you can access these using their shortname via the `plugin()`
@@ -185,7 +186,7 @@ The `Redirect` plugin does this work for you. It offers three methods:
   Redirects to a named route, using the provided `$params` and `$options` to
   assembled the URL.
 
-- `toUrl(string $url) : Laminas\Http\Response`: Simply redirects to the given URL.
+- `toUrl(string $url, int $statusCode = 302) : Laminas\Http\Response`: Simply redirects to the given URL and statusCode (default to 302 if not provided).
 
 - `refresh() : Laminas\Http\Response`: Refresh to current route.
 
